@@ -5,7 +5,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "NODE_ENV=production node server.js",
+    "postinstall": "webpack -p"
   },
   "author": "",
   "license": "ISC",
