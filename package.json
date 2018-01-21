@@ -4,10 +4,9 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
+    "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
     "start": "webpack-dev-server --host 0.0.0.0 --hot",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "NODE_ENV=production node server.js",
-    "postinstall": "webpack -p"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",

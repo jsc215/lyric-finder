@@ -29,5 +29,13 @@ module.exports = {
   devServer: {
     contentBase: './build',
     inline: true
-  }
+  },
+}
+  if (process.env.NODE_ENV === 'production') {
+  delete config.devtool;
+  var webpack = require('webpack');
+  config.plugins = [
+    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
+  ];
+
 };
