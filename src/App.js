@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import ComponentToRender from './RelativePath'
-// import DataToUse from './RelativePath'
 
 class App extends React.Component {
   constructor(props) {
@@ -30,14 +28,12 @@ class App extends React.Component {
     })
     .then(response => response.json())
     .then(body => {
-      // debugger;
       let title = this.state.title;
       let artist = this.state.artist;
       this.setState({
        lyrics: body.lyrics,
        title: title,
        artist: artist
-       // artist: this.artist
      });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -51,7 +47,7 @@ class App extends React.Component {
     this.setState({
       artist: '',
       title: ''
-    })
+    });
   }
 
   handleSubmit(event) {
@@ -63,16 +59,11 @@ class App extends React.Component {
 
     console.log(formPayload)
     this.getLyrics()
-    // this.handleClearForm()
   }
-
 
   componentDidMount(){
     this.getLyrics();
   }
-
-
-
 
   handleChange(event) {
     let newKey = event.target.name;
@@ -88,7 +79,6 @@ class App extends React.Component {
     });
 
     return(
-
       <div className='container'>
         <h1>The Lyric Finder</h1>
         <form className='search'  onSubmit={this.handleSubmit}>
@@ -114,11 +104,10 @@ class App extends React.Component {
         </form>
         <div className='row'>
           <div className='4 columns'>
-
        {lyrics}
+        </div>
       </div>
     </div>
-      </div>
     );
   }
 }
