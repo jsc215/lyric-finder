@@ -6,6 +6,7 @@
   "scripts": {
     "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
     "start": "webpack-dev-server --host 0.0.0.0 --hot",
+    "webpack": "node_modules/.bin/webpack --config ./react/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
