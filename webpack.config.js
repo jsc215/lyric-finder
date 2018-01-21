@@ -30,4 +30,4 @@ module.exports = {
     contentBase: './build',
     inline: true
   }
-}
+};
