@@ -1,12 +1,19 @@
 var webpack = require('webpack');
+const path = require('path');
 
-var config= {
+module.exports= {
   entry: {
     path: './src/main.js'
   },
   output: {
-    path: __dirname + '/build',
+    path: './src',
+    publicPath: '/',
     filename: 'bundle.js'
+  },
+
+  resolve: {
+    modulesDirectories: ['node_modules', 'src'],
+    extensions: ['', '.js', '.jsx']
   },
   module: {
     rules: [
@@ -29,14 +36,16 @@ var config= {
   devServer: {
     contentBase: './build',
     inline: true
-  }
-}
-  if (process.env.NODE_ENV === 'production') {
-  delete config.devtool;
-  var webpack = require('webpack');
-  config.plugins = [
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
-  ];
+  },
 
+  plugins: [
+   new webpack.DefinePlugin({
+     'process.env': {
+       // This tells the Webpack and Babel for optimization for performance
+       NODE_ENV: JSON.stringify('production')
+     }
+   }),
+   new webpack.optimize.UglifyJsPlugin(),
+   new webpack.NoErrorsPlugin(), // Makes sure Webpack will not compile if Errors
+ ]
 };
-module.exports = config;
