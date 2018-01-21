@@ -81,33 +81,33 @@ class App extends React.Component {
     return(
       <div className='container'>
         <h1>The Lyric Finder</h1>
-        <form className='search'  onSubmit={this.handleSubmit}>
-          <label>
-          <input
-            placeholder='Title'
-            name='title'
-            type='text'
-            value={this.state.title}
-            onChange={this.handleChange}
-          />
-        </label>
-          <label>
-          <input
-            placeholder='Artist'
-            name='artist'
-            type='text'
-            value={this.state.artist}
-            onChange={this.handleChange}
-          />
-        </label>
-          <input className='button-primary' type= 'submit' value='GET THE LYRICS'/>
-        </form>
+          <form className='search'  onSubmit={this.handleSubmit}>
+            <label>
+              <input
+                placeholder='Title'
+                name='title'
+                type='text'
+                value={this.state.title}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              <input
+                placeholder='Artist'
+                name='artist'
+                type='text'
+                value={this.state.artist}
+                onChange={this.handleChange}
+              />
+            </label>
+              <input className='button-primary' type= 'submit' value='GET THE LYRICS'/>
+          </form>
         <div className='row'>
           <div className='4 columns'>
-       {lyrics}
+            {lyrics}
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 }
