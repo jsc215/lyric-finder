@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 
-var config = {
+module.exports = {
   entry: {
     path: './src/main.js'
   },
@@ -39,4 +39,3 @@ var config = {
   ];
 
 };
-module.exports = config;
