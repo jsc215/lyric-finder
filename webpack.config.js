@@ -5,7 +5,7 @@ var config = {
     path: './src/main.js'
   },
   output: {
-    path: __dirname+'/build',
+    path: __dirname + '/build',
     filename: 'bundle.js'
   },
   module: {
@@ -29,7 +29,7 @@ var config = {
   devServer: {
     contentBase: './build',
     inline: true
-  },
+  }
 }
   if (process.env.NODE_ENV === 'production') {
   delete config.devtool;
