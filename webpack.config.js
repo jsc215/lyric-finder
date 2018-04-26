@@ -48,3 +48,4 @@ module.exports= {
    new webpack.optimize.UglifyJsPlugin(),
    new webpack.NoErrorsPlugin(), // Makes sure Webpack will not compile if Errors
  ]
+}
