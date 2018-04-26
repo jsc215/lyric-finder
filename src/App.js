@@ -12,7 +12,6 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
-    this.getData = this.getData.bind(this);
   }
 
   getLyrics() {
@@ -41,7 +40,6 @@ class App extends React.Component {
 
   handleClick() {
     this.getLyrics();
-    this.getData();
   }
 
   handleClearForm(event) {
@@ -53,7 +51,6 @@ class App extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // debugger
     let formPayload = {
       artist: this.state.artist,
       title: this.state.title
@@ -71,7 +68,6 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getLyrics();
-    this.getData();
   }
 
   handleChange(event) {
@@ -151,14 +147,4 @@ class App extends React.Component {
     );
   }
 }
-
-function Content(props) {
-  return (
-    <div>
-      <h1> {props.title}</h1>
-      <h1>{props.artist}</h1>
-    </div>
-  );
-}
-
 export default App;

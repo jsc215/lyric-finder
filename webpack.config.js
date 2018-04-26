@@ -28,7 +28,18 @@ module.exports = {
   },
   devtool: 'eval-source-map',
   devServer: {
-    contentBase: './build',
+    contentBase: './',
     inline: true
-  }
-}
+  },
+  plugins: [
+   new webpack.DefinePlugin({
+     'process.env': {
+       // This tells the Webpack and Babel for optimization for performance
+       NODE_ENV: JSON.stringify('production')
+     }
+   }),
+   new webpack.optimize.UglifyJsPlugin(),
+   new webpack.NoErrorsPlugin(), // Makes sure Webpack will not compile if Errors
+ ]
+};
+
